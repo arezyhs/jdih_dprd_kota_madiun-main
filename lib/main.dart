@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:jdih_dprd_kota_madiun/home.dart';
+import 'screens/main_menu.dart';
 import 'package:page_transition/page_transition.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'JDIH DPRD Kota Madiun',
       home: AnimatedSplashScreen(
         splash: 'assets/img/splash.gif',
-        nextScreen: HalamanUtama(),
+        nextScreen: MainMenu(),
         duration: 3000,
         splashTransition: SplashTransition.fadeTransition,
         pageTransitionType: PageTransitionType.fade,
