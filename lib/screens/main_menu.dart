@@ -64,42 +64,7 @@ class _MainMenuState extends State<MainMenu> {
         }
       },
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromARGB(255, 255, 175, 54),
-                  Color.fromARGB(255, 255, 175, 54),
-                ],
-              ),
-              borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  spreadRadius: 1,
-                  blurRadius: 1,
-                  offset: const Offset(0, 3),
-                ),
-              ],
-            ),
-          ),
-          centerTitle: true,
-          title: Text(
-            menuData[_selectedIndex]['name']!,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 0, 0, 0),
-            ),
-          ),
-        ),
+        // AppBar dihapus, header langsung dari web
         body: SafeArea(
           child: _pages[_selectedIndex],
         ),

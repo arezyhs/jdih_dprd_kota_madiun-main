@@ -8,7 +8,7 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPageState extends State<ProfilPage> {
-  InAppWebViewController? _webViewController;
+  // _webViewController dihapus karena tidak digunakan
   bool isLoading = true;
 
   @override
@@ -30,7 +30,7 @@ class _ProfilPageState extends State<ProfilPage> {
             ),
           ),
           onWebViewCreated: (controller) {
-            _webViewController = controller;
+            // tidak pakai assignment controller
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller);

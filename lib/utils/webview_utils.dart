@@ -1,5 +1,6 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
+// inject css/js webview
 Future<void> injectHideFooterAndTableJS(InAppWebViewController controller,
     {bool enableTableScroll = false}) async {
   String js = '''
@@ -9,6 +10,10 @@ Future<void> injectHideFooterAndTableJS(InAppWebViewController controller,
 		if(footerById){footerById.style.display='none';}
 		var footerByClass = document.getElementsByClassName('footer');
 		for(var i=0;i<footerByClass.length;i++){footerByClass[i].style.display='none';}
+		
+    // Hide tombol kontak di header web
+		var kontakBtn = document.querySelectorAll('a[href*="/kontak"], .menu-kontak, .header-kontak');
+		for(var i=0;i<kontakBtn.length;i++){kontakBtn[i].style.display='none';}
 	''';
   if (enableTableScroll) {
     js += '''

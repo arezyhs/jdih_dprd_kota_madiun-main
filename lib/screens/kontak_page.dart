@@ -8,7 +8,7 @@ class KontakPage extends StatefulWidget {
 }
 
 class _KontakPageState extends State<KontakPage> {
-  InAppWebViewController? _webViewController;
+  // _webViewController dihapus karena tidak digunakan
   bool isLoading = true;
 
   @override
@@ -30,7 +30,7 @@ class _KontakPageState extends State<KontakPage> {
             ),
           ),
           onWebViewCreated: (controller) {
-            _webViewController = controller;
+            // tidak pakai assignment controller
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller);

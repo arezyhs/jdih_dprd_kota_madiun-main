@@ -8,7 +8,7 @@ class MonografiPage extends StatefulWidget {
 }
 
 class _MonografiPageState extends State<MonografiPage> {
-  InAppWebViewController? _webViewController;
+  // _webViewController dihapus karena tidak digunakan
   bool isLoading = true;
 
   @override
@@ -30,7 +30,7 @@ class _MonografiPageState extends State<MonografiPage> {
             ),
           ),
           onWebViewCreated: (controller) {
-            _webViewController = controller;
+            // tidak pakai assignment controller
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller,

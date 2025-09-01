@@ -8,7 +8,7 @@ class BeritaPage extends StatefulWidget {
 }
 
 class _BeritaPageState extends State<BeritaPage> {
-  InAppWebViewController? _webViewController;
+  // _webViewController dihapus karena tidak digunakan
   bool isLoading = true;
 
   @override
@@ -30,7 +30,7 @@ class _BeritaPageState extends State<BeritaPage> {
             ),
           ),
           onWebViewCreated: (controller) {
-            _webViewController = controller;
+            // tidak pakai assignment controller
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller);

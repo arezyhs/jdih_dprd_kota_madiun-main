@@ -8,7 +8,7 @@ class ProdukHukumPage extends StatefulWidget {
 }
 
 class _ProdukHukumPageState extends State<ProdukHukumPage> {
-  InAppWebViewController? _webViewController;
+  // _webViewController dihapus karena tidak digunakan
   bool isLoading = true;
 
   @override
@@ -30,7 +30,7 @@ class _ProdukHukumPageState extends State<ProdukHukumPage> {
             ),
           ),
           onWebViewCreated: (controller) {
-            _webViewController = controller;
+            // tidak pakai assignment controller
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller,

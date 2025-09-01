@@ -8,9 +8,10 @@ class BerandaPage extends StatefulWidget {
 }
 
 class _BerandaPageState extends State<BerandaPage> {
-  InAppWebViewController? _webViewController;
+  // _webViewController dihapus karena tidak digunakan
   bool isLoading = true;
 
+// widget konfirmasi keluar
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -32,7 +33,7 @@ class _BerandaPageState extends State<BerandaPage> {
             ],
           ),
         );
-        return exit ?? false;
+        return exit;
       },
       child: Stack(
         children: [
@@ -51,7 +52,7 @@ class _BerandaPageState extends State<BerandaPage> {
               ),
             ),
             onWebViewCreated: (controller) {
-              _webViewController = controller;
+              // tidak perlu assignment controller
             },
             onLoadStop: (controller, url) async {
               await injectHideFooterAndTableJS(controller);
