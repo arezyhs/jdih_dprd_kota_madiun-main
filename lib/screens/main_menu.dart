@@ -8,6 +8,8 @@ import 'monografi_page.dart';
 import 'kontak_page.dart';
 
 class MainMenu extends StatefulWidget {
+  const MainMenu({super.key});
+
   @override
   State<MainMenu> createState() => _MainMenuState();
 }
@@ -46,16 +48,16 @@ class _MainMenuState extends State<MainMenu> {
           bool exit = await showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: Text('Konfirmasi'),
-              content: Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
+              title: const Text('Konfirmasi'),
+              content: const Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(false),
-                  child: Text('Batal'),
+                  child: const Text('Batal'),
                 ),
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(true),
-                  child: Text('Keluar'),
+                  child: const Text('Keluar'),
                 ),
               ],
             ),
@@ -71,14 +73,14 @@ class _MainMenuState extends State<MainMenu> {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white,
-          selectedItemColor: Color.fromARGB(255, 255, 175, 54),
+          selectedItemColor: const Color.fromARGB(255, 255, 175, 54),
           unselectedItemColor: Colors.grey,
           currentIndex: _selectedIndex,
           showUnselectedLabels: true,
           showSelectedLabels: true,
           selectedLabelStyle:
-              TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
-          unselectedLabelStyle: TextStyle(fontSize: 11),
+              const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+          unselectedLabelStyle: const TextStyle(fontSize: 11),
           onTap: (index) {
             setState(() {
               _selectedIndex = index;

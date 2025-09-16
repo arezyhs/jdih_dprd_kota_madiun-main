@@ -3,6 +3,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import '../utils/webview_utils.dart';
 
 class BerandaPage extends StatefulWidget {
+  const BerandaPage({super.key});
+
   @override
   State<BerandaPage> createState() => _BerandaPageState();
 }
@@ -19,16 +21,17 @@ class _BerandaPageState extends State<BerandaPage> {
         bool exit = await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Konfirmasi'),
-            content: Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
+            title: const Text('Konfirmasi'),
+            content:
+                const Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: Text('Batal'),
+                child: const Text('Batal'),
               ),
               TextButton(
                 onPressed: () => Navigator.of(context).pop(true),
-                child: Text('Keluar'),
+                child: const Text('Keluar'),
               ),
             ],
           ),
@@ -56,6 +59,7 @@ class _BerandaPageState extends State<BerandaPage> {
             },
             onLoadStop: (controller, url) async {
               await injectHideFooterAndTableJS(controller);
+              await injectHideBurgerMenuJS(controller);
               setState(() {
                 isLoading = false;
               });
@@ -67,7 +71,7 @@ class _BerandaPageState extends State<BerandaPage> {
             },
           ),
           if (isLoading)
-            Center(
+            const Center(
                 child: CircularProgressIndicator(
                     color: Color.fromARGB(255, 255, 175, 54))),
         ],

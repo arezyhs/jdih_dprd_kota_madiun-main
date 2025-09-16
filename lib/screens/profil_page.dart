@@ -3,6 +3,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import '../utils/webview_utils.dart';
 
 class ProfilPage extends StatefulWidget {
+  const ProfilPage({super.key});
+
   @override
   State<ProfilPage> createState() => _ProfilPageState();
 }
@@ -34,6 +36,7 @@ class _ProfilPageState extends State<ProfilPage> {
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller);
+            await injectHideBurgerMenuJS(controller);
             setState(() {
               isLoading = false;
             });
@@ -45,7 +48,7 @@ class _ProfilPageState extends State<ProfilPage> {
           },
         ),
         if (isLoading)
-          Center(
+          const Center(
               child: CircularProgressIndicator(
                   color: Color.fromARGB(255, 255, 175, 54))),
       ],

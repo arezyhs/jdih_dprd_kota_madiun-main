@@ -3,6 +3,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import '../utils/webview_utils.dart';
 
 class BeritaPage extends StatefulWidget {
+  const BeritaPage({super.key});
+
   @override
   State<BeritaPage> createState() => _BeritaPageState();
 }
@@ -32,8 +34,18 @@ class _BeritaPageState extends State<BeritaPage> {
           onWebViewCreated: (controller) {
             // tidak pakai assignment controller
           },
+          shouldOverrideUrlLoading: (controller, navigationAction) async {
+            // Jika navigationAction adalah link yang ingin dibuka di tab baru, tetap buka di WebView
+            if (navigationAction.isForMainFrame ||
+                navigationAction.targetFrame == null) {
+              return NavigationActionPolicy.ALLOW;
+            }
+            // Default: tetap buka di WebView
+            return NavigationActionPolicy.ALLOW;
+          },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller);
+            await injectHideBurgerMenuJS(controller);
             setState(() {
               isLoading = false;
             });
@@ -45,7 +57,7 @@ class _BeritaPageState extends State<BeritaPage> {
           },
         ),
         if (isLoading)
-          Center(
+          const Center(
               child: CircularProgressIndicator(
                   color: Color.fromARGB(255, 255, 175, 54))),
       ],

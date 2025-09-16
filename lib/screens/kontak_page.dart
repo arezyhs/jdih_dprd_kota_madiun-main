@@ -3,6 +3,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import '../utils/webview_utils.dart';
 
 class KontakPage extends StatefulWidget {
+  const KontakPage({super.key});
+
   @override
   State<KontakPage> createState() => _KontakPageState();
 }
@@ -34,6 +36,7 @@ class _KontakPageState extends State<KontakPage> {
           },
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller);
+            await injectHideBurgerMenuJS(controller);
             setState(() {
               isLoading = false;
             });
@@ -45,7 +48,7 @@ class _KontakPageState extends State<KontakPage> {
           },
         ),
         if (isLoading)
-          Center(
+          const Center(
               child: CircularProgressIndicator(
                   color: Color.fromARGB(255, 255, 175, 54))),
       ],

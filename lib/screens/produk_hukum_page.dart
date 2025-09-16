@@ -3,6 +3,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import '../utils/webview_utils.dart';
 
 class ProdukHukumPage extends StatefulWidget {
+  const ProdukHukumPage({super.key});
+
   @override
   State<ProdukHukumPage> createState() => _ProdukHukumPageState();
 }
@@ -35,6 +37,7 @@ class _ProdukHukumPageState extends State<ProdukHukumPage> {
           onLoadStop: (controller, url) async {
             await injectHideFooterAndTableJS(controller,
                 enableTableScroll: true);
+            await injectHideBurgerMenuJS(controller);
             setState(() {
               isLoading = false;
             });
@@ -46,7 +49,7 @@ class _ProdukHukumPageState extends State<ProdukHukumPage> {
           },
         ),
         if (isLoading)
-          Center(
+          const Center(
               child: CircularProgressIndicator(
                   color: Color.fromARGB(255, 255, 175, 54))),
       ],
