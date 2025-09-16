@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'beranda_page.dart';
 import 'profil_page.dart';
 import 'berita_page.dart';
