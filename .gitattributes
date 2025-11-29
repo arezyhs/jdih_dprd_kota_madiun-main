@@ -1,0 +1,36 @@
+# GitHub Language Detection Configuration for Flutter Project
+# This file helps GitHub correctly identify this as a Dart/Flutter project
+
+# Exclude auto-generated platform-specific files from language detection
+android/** linguist-generated=true
+ios/** linguist-generated=true
+windows/** linguist-generated=true
+linux/** linguist-generated=true
+macos/** linguist-generated=true
+build/** linguist-generated=true
+
+# Specifically exclude common auto-generated files
+*.pbxproj linguist-generated=true
+*.xcconfig linguist-generated=true
+*.xcworkspacedata linguist-generated=true
+*.entitlements linguist-generated=true
+gradlew linguist-generated=true
+gradlew.bat linguist-generated=true
+*.properties linguist-generated=true
+
+# Mark generated plugin files as generated
+**/GeneratedPluginRegistrant.* linguist-generated=true
+**/generated_plugin_registrant.* linguist-generated=true
+**/generated_plugins.cmake linguist-generated=true
+
+# Ensure Dart files are properly detected
+*.dart linguist-language=Dart
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+
+# Mark this as primarily a Dart project
+* linguist-detectable=false
+*.dart linguist-detectable=true
+*.yaml linguist-detectable=true
+*.yml linguist-detectable=true
+*.md linguist-detectable=true
