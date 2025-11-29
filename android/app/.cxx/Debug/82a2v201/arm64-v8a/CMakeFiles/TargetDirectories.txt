@@ -1,2 +1,0 @@
-D:/Android Project/jdih_dprd_kota_madiun-main/android/app/.cxx/Debug/82a2v201/arm64-v8a/CMakeFiles/edit_cache.dir
-D:/Android Project/jdih_dprd_kota_madiun-main/android/app/.cxx/Debug/82a2v201/arm64-v8a/CMakeFiles/rebuild_cache.dir

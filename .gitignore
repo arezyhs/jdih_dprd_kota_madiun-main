@@ -52,3 +52,17 @@ log.txt
 .flutter-plugins-dependencies
 .packages
 .metadata
+
+# NDK/CMake build artifacts (should never be in version control)
+**/.cxx/
+**/build/
+android/app/.cxx/
+android/.gradle/
+android/local.properties
+android/key.properties
+
+# iOS build artifacts
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/Generated.xcconfig
+**/ios/.symlinks/
+**/ios/Flutter/.last_build_id
